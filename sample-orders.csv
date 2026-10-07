@@ -1,0 +1,9 @@
+order_id,sku,quantity,pod_id,floor,location,cpt_minutes,customer_shipment
+10001,ABC123,1,P102,2,A-12,12,yes
+10002,ABC123,2,P102,2,A-12,35,no
+10003,XYZ555,1,P221,2,B-08,8,yes
+10004,ABC123,1,P102,2,A-12,20,yes
+10005,XYZ555,1,P221,2,B-08,42,no
+10006,LMN900,1,P310,3,C-14,7,yes
+10007,ABC123,1,P102,2,A-12,28,yes
+10008,QRS410,3,P402,3,D-02,18,no

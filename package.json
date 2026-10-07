@@ -1,0 +1,8 @@
+{
+  "name":"force-pick-intelligence",
+  "version":"1.0.0",
+  "private":true,
+  "type":"module",
+  "scripts":{"start":"node server.js"},
+  "dependencies":{"express":"latest","openai":"latest"}
+}

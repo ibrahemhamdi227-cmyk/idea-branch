@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Force Pick Intelligence</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div><div class="eyebrow">PICKFLOW • AI OPERATIONS</div><h1>Force Pick Intelligence</h1><p>Turn order demand into a validated force-pick queue.</p></div>
+    <div class="top-actions"><span class="status"><i></i> Simulation mode</span><button id="loadDemo" class="secondary">Load demo orders</button></div>
+  </header>
+
+  <main>
+    <section class="hero-grid">
+      <div class="panel upload-panel">
+        <div class="panel-head"><div><h2>Order input</h2><p>Upload CSV or paste your order list.</p></div><span class="badge">CSV</span></div>
+        <label class="dropzone" id="dropzone"><input id="fileInput" type="file" accept=".csv,text/csv"><strong>Drop CSV here</strong><span>or tap to choose a file</span></label>
+        <div class="format">Expected: order_id, sku, quantity, pod_id, floor, location, cpt_minutes, customer_shipment</div>
+      </div>
+      <div class="panel insight-panel">
+        <div class="panel-head"><div><h2>AI operations brief</h2><p id="aiStatus">Run analysis to study demand patterns.</p></div><button id="analyzeBtn" class="primary">Analyze orders</button></div>
+        <div id="brief" class="brief empty">No analysis yet.</div>
+      </div>
+    </section>
+
+    <section class="metrics" id="metrics"></section>
+
+    <section class="content-grid">
+      <div class="panel queue-panel">
+        <div class="panel-head"><div><h2>Force-pick queue</h2><p>Rule-validated ranking. AI recommendations never bypass these rules.</p></div><button id="exportBtn" class="secondary">Export queue</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Orders</th><th>SKU</th><th>Pod</th><th>Floor</th><th>CPT</th><th>Reason</th><th></th></tr></thead><tbody id="queue"></tbody></table></div>
+      </div>
+      <aside class="side-stack">
+        <div class="panel"><div class="panel-head"><div><h2>Patterns</h2><p>Demand signals detected from the order list.</p></div></div><div id="patterns" class="stack"></div></div>
+        <div class="panel"><div class="panel-head"><div><h2>Guardrails</h2><p>Hard rules before anything reaches Force Pick.</p></div></div>
+          <ul class="guardrails"><li>Same-floor inventory only</li><li>Customer-shipment priority is preserved</li><li>CPT urgency affects ranking</li><li>Pod grouping only when SKU + pod + floor match</li><li>No direct robot commands from AI</li></ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
